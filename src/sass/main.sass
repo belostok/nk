@@ -1,0 +1,602 @@
+@import 'variables'			
+
+// .compensate-for-scrollbar
+// 	padding-right: 0!important
+
+section
+	position: relative
+button
+	padding: 0
+	border: none
+	background: transparent
+hr
+	margin: 0
+	opacity: 1
+p, h1, h2, h3, h4
+	margin: 0
+ul
+	margin: 0
+	padding: 0
+li
+	list-style-type: none
+a
+	text-decoration: none
+	color: $black
+	display: block
+	&:hover, &:active
+		color: $white
+input, textarea, button, a
+	outline: none
+input, textarea, select
+	border-radius: 0
+input
+	border: none
+	background: transparent
+strong
+	font-family: $bold
+
+.container
+	max-width: 1260px
+	padding: 0
+.row
+	margin: 0
+.col
+	padding: 0
+.fitCover
+	position: relative
+	object-fit: cover
+	width: 100%
+	height: 100%
+.fitContain
+	position: relative
+	object-fit: contain
+	width: 100%
+	height: 100%
+.dec
+	position: absolute
+	z-index: -1
+.absolute
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+
+form
+	width: 100%
+
+input[type='radio']
+	position: absolute
+	z-index: -1
+	opacity: 0
+input[type='text'],
+input[type='email'],
+textarea
+	border-bottom: 1px solid $white
+	width: 100%
+	padding: 10px 20px
+	font: 16px/18px $bold
+	color: $white
+	text-transform: uppercase
+	&::placeholder
+		opacity: 0.2
+// textarea
+// 	resize: none
+// 	height: 40px
+
+.formButton
+	padding: 16px 50px
+	color: $white
+	font: 14px/18px $bold
+	text-transform: uppercase
+	background: rgba(19,23,24,.4)
+// select
+// 	border: 1px solid $black
+// 	width: 100%
+// 	height: 50px
+// 	font: 14px/18px $regular
+// 	padding-left: 13%
+// 	padding-right: 25%
+// 	outline: none
+// 	text-overflow: ellipsis
+// 	white-space: nowap
+// 	overflow: hidden
+// 	appearance: none
+// 	background-image: url(../img/select.svg)
+// 	background-repeat: no-repeat
+// 	background-position: 90% center
+
+// .button
+// 	font-size: 12px
+// 	line-height: 15px
+// 	background: $black
+// 	padding: 10px 40px
+// 	color: $white
+// 	&:hover
+// 		color: $white
+// 	&.white
+// 		background: $white
+// 		color: $black
+
+.prev, .next
+	outline: none
+
+.isMobile
+	display: none
+
+.decAngle
+	transform: $decSkew
+.decLine
+	height: 1px
+	background: $white
+	opacity: 0.3
+	transform: $decRotate
+.titleDec
+	background: $green
+	width: 40px
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 0
+
+body, html
+	max-width: 100%
+	overflow-x: hidden
+body
+	font-family: $regular
+	background: $black
+	color: $white
+	font-size: 16px
+	line-height: 20px
+h2
+	font: 36px/45px $bold
+	text-transform: uppercase
+
+
+header
+	position: fixed
+	z-index: 2
+	top: 0
+	left: 0
+	right: 0
+	width: 100%
+	background: transition
+	transition: background .3s
+	&.active
+		background: $black
+	.wrapper
+		position: relative
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 30px 0
+		.dec
+			background: $green
+			opacity: 0.7
+			top: 0
+			bottom: 0
+			left: 80%
+			right: -300%
+	.logo
+		display: flex
+		width: 186px
+		justify-content: space-between
+		align-items: center
+		img
+			flex: 0 0 auto
+		h3
+			font: 16px/20px $bold
+			color: $white
+	nav
+		ul
+			display: flex
+			li
+				&:not(:last-child)
+					margin-right: 40px
+				a
+					color: $white
+					font: $small
+					text-transform: uppercase
+	.phone
+		display: flex
+		align-items: center
+		color: $white
+		font: $small
+		svg
+			margin-right: 40px
+					
+#homeTitle
+	height: calc(100vh + 60px)
+	overflow: hidden
+	&::before
+		content: ''
+		transform: $decSkew
+		background: $black
+		position: absolute
+		width: 19vw
+		height: 19vw
+		bottom: 0
+		right: -9.5vw
+	.background
+		z-index: -1
+		padding-bottom: 60px
+		&::after
+			content: ''
+			position: absolute
+			left: 0
+			right: 0
+			top: 0
+			bottom: 60px
+			background: linear-gradient(168.28deg, #131718 7.2%, rgba(19, 23, 24, 0.3) 35.17%, rgba(19, 23, 24, 0.3) 91.41%)
+	& > .decs
+		.bottomRightLine
+			width: 58vw
+			right: -8vw
+			bottom: 21vw
+			z-index: 1
+		.bottomRightBlock
+			width: 24.4vw
+			height: 35.6vw
+			background: $green
+			opacity: 0.7
+			right: -7vw
+			bottom: 0
+			z-index: 1
+	.wrapper
+		height: calc(100vh - 60px)
+		display: flex
+		align-items: center
+	.title
+		position: relative
+		.decs
+			.topLeftBlock
+				height: 230px
+				width: 35px
+				left: 20px
+				top: -90px
+				border: 1px solid #000
+			.topLeftLine
+				width: 2000px
+				left: -1142px
+				top: 300px
+		h2
+			font: 30px/27px $light
+			letter-spacing: 10px
+			text-transform: uppercase
+			margin-bottom: 35px
+		h1
+			font: 50px/63px $bold
+			text-transform: uppercase
+			margin-left: 50px
+			margin-bottom: 40px
+		p
+			font-size: 21px
+			line-height: 26px
+
+#homeClients
+	padding-top: 20px
+	.title
+		padding: 50px 0
+		display: flex
+		align-items: center
+		position: relative
+		.decs
+			img
+				top: -167px
+				left: -912px
+		.navigation
+			margin-left: 100px
+			width: 150px
+			height: 50px
+			position: relative
+			.prev, .next
+				width: 50px
+				height: 100%
+				position: absolute
+				cursor: pointer
+				display: flex
+				align-items: center
+				transition: width .3s
+				&:hover
+					width: 100px
+				.arrow
+					width: 100%
+					height: 8px
+					display: flex
+					align-items: center
+					position: relative
+					hr
+						color: $white
+						width: 100%
+					svg
+						position: absolute
+						top: -0.5px
+			.prev
+				right: 100px
+				svg
+					left: -1px
+			.next
+				left: 100px
+				svg
+					right: -1px
+	.sliderContainer
+		width: 100%
+		margin-top: 55px
+		overflow: hidden
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 40%
+			right: -200%
+			background: $green
+			opacity: 0.5
+			transform: $decSkew
+		.item
+			.imgContainer
+				padding: 30px 0
+				.image
+					height: 356px
+					width: 100%
+			.textContainer
+				display: flex
+				align-items: center
+				padding: 30px 0
+				height: 100%
+				.text
+					height: max-content
+					h3
+						font: 24px/30px $bold
+						text-transform: uppercase
+						margin-bottom: 40px
+					p
+						font-size: 14px
+						line-height: 17px
+
+#homePartners
+	margin-top: 60px
+	.wrapper
+		position: relative
+		padding: 35px 0
+		&::before
+			content: ''
+			position: absolute
+			left: 65px
+			right: 65px
+			top: 0
+			bottom: 0
+			transform: $decSkew
+			background: $green
+			opacity: 0.3
+		.prev, .next
+			height: 100%
+			display: flex
+			align-items: center
+		.prev
+			padding-left: 25px
+		.next
+			padding-right: 25px
+			justify-content: flex-end
+	.sliderContainer
+		overflow: hidden
+		.item
+			height: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+			height: 65px
+			img
+				max-width: 95px
+				max-height: 100%
+
+#homeServices
+	margin-top: 80px
+	.wrapper
+		position: relative
+		& > .decs
+			.decLine
+				background: $white
+				opacity: 0.3
+				height: 0.3px
+			.leftLine
+				width: 1000px
+				top: 480px
+				left: -440px
+			.rightLine
+				width: 2000px
+				bottom: -140px
+				right: -20px
+				z-index: 1
+	.title
+		padding: 15px 0 80px
+		position: relative
+		.decs
+			img
+				top: -245px
+				right: 35px
+	.services
+		margin-top: 15px
+		transform: $decSkew
+		.col
+			position: relative
+		.image
+			overflow: hidden
+			bottom: -15px
+			top: -18px
+			right: 181px
+			left: 75px
+			position: absolute
+			img
+				transform: $decSkewFlip
+				position: absolute
+				top: -95px
+				left: -225px
+				right: 0
+				min-height: 100%
+				width: 200%
+		.inner
+			display: flex
+			flex-wrap: wrap
+			position: relative
+			.side
+				width: 50%
+				display: flex
+				margin-bottom: 70px
+				&:nth-child(even)
+					justify-content: flex-end
+				&:nth-last-child(-n+2)
+					margin-bottom: 0
+				.item
+					width: 250px
+					position: relative
+					&::before
+						content: ''
+						position: absolute
+						top: -18px
+						left: -50px
+						height: 56px
+						width: 210px
+						background: $green
+						opacity: 0.5
+					h3
+						font: 20px/25px $bold
+						text-transform: uppercase
+						transform: $decSkewFlip
+						color: $white
+#homeTeam
+	margin-top: 125px
+	.title
+		position: relative
+		margin-left: 70px
+		padding: 50px 0
+	.team
+		margin-top: 70px
+		display: flex
+		flex-wrap: wrap
+		.item
+			width: 315px
+			min-height: 370px
+			overflow: hidden
+			position: relative
+			margin-bottom: 30px
+			&::before
+				content: ''
+				position: absolute
+				height: 450px
+				width: 402px
+				background: $gray
+				top: -75px
+				left: 0
+				transform: $decSkew
+			&:first-child
+				margin-left: 50px
+			&:not(:first-child)
+				margin-left: 30px	
+			&:nth-child(4), &:nth-child(10)
+				margin-left: 253px
+			.upperSide
+				height: 237px
+				position: relative
+				display: flex
+				justify-content: space-between
+				align-items: flex-end
+				.titleContainer
+					padding-left: 24px
+					h3
+						font: 16px/20px $bold
+						text-transform: uppercase
+						margin-bottom: 25px
+						max-width: 102px
+					p
+						font-size: 12px
+						line-height: 15px
+						max-width: 100px
+				.imgContainer
+					flex: 0 0 auto
+					width: 165px
+					height: 100%
+			.lowerSide
+				padding: 20px 0 27px 24px
+				max-width: 208px
+				position: relative
+				p
+					font-size: 14px
+					line-height: 17px
+
+#homeApplication
+	margin-top: 170px
+	.wrapper
+		transform: $decSkew
+		padding: 113px 0 70px
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			left: -70px
+			right: -25px
+			top: 0
+			bottom: 0
+			background: rgba(36,59,59,.2)
+		.inner
+			.textContainer
+				padding-left: 135px
+				padding-right: 30px
+				h3, p, .socialContainer
+					transform: $decSkewFlip
+				h3
+					font: 26px/33px $bold
+					text-transform: uppercase
+					margin-bottom: 50px
+				p
+					font-size: 14px
+					line-height: 17px
+					margin-bottom: 50px
+				.socialContainer
+					display: flex
+					align-items: center
+					margin-left: 60px
+					h4
+						font: 18px/23px $bold
+						text-transform: uppercase
+						margin-right: 80px
+						flex: 0 0 auto
+					.social
+						display: flex
+						.item
+							width: 60px
+							height: 60px
+							display: flex
+							justify-content: center
+							align-items: center
+							overflow: hidden
+							position: relative
+							&::before
+								content: ''
+								background: $light
+								width: 100px
+								height: 100%
+								transform: $decRotate
+								position: absolute
+								top: 0
+								left: -20px
+								opacity: 0.2
+								z-index: -1
+							&:not(:last-child)
+								margin-right: 40px
+			form
+				transform: $decSkewFlip
+				width: 376px
+				margin-top: 25px
+				margin-left: 155px
+				.formGroup
+					width: 100%
+					&:first-child
+						margin-left: 60px
+						margin-bottom: 25px	
+				.buttonContainer
+					width: 100%
+					margin-top: 75px
+					display: flex
+					justify-content: center				
