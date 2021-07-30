@@ -1,4 +1,4 @@
-@import 'variables'			
+@import 'variables'
 
 // .compensate-for-scrollbar
 // 	padding-right: 0!important
@@ -85,11 +85,37 @@ textarea
 // 	height: 40px
 
 .formButton
-	padding: 16px 50px
+	width: 206px
+	height: 62px
 	color: $white
 	font: 14px/18px $bold
+	letter-spacing: 2px
 	text-transform: uppercase
-	background: rgba(19,23,24,.4)
+	position: relative
+	overflow: hidden
+	&::before
+		content: ''
+		width: 191px
+		height: 50px
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		margin: auto
+		background: rgba(19,23,24,.4)
+		z-index: -1
+	&::after
+		content: ''
+		position: absolute
+		background: rgba(36,59,59,.5)
+		transform: $decRotate
+		width: 206px
+		height: 142px
+		top: -47px
+		left: 7px
+		z-index: -2
+
 // select
 // 	border: 1px solid $black
 // 	width: 100%
@@ -152,7 +178,6 @@ h2
 	font: 36px/45px $bold
 	text-transform: uppercase
 
-
 header
 	position: fixed
 	z-index: 2
@@ -204,7 +229,7 @@ header
 		font: $small
 		svg
 			margin-right: 40px
-					
+
 #homeTitle
 	height: calc(100vh + 60px)
 	overflow: hidden
@@ -467,6 +492,14 @@ header
 						color: $white
 #homeTeam
 	margin-top: 125px
+	.wrapper
+		.decs
+			.line
+				width: 1506px
+				background: $white
+				opacity: 0.3
+				right: 130px
+				bottom: -20px
 	.title
 		position: relative
 		margin-left: 70px
@@ -493,7 +526,7 @@ header
 			&:first-child
 				margin-left: 50px
 			&:not(:first-child)
-				margin-left: 30px	
+				margin-left: 30px
 			&:nth-child(4), &:nth-child(10)
 				margin-left: 253px
 			.upperSide
@@ -528,18 +561,41 @@ header
 #homeApplication
 	margin-top: 170px
 	.wrapper
-		transform: $decSkew
-		padding: 113px 0 70px
 		position: relative
-		&::before
-			content: ''
-			position: absolute
-			left: -70px
-			right: -25px
-			top: 0
-			bottom: 0
-			background: rgba(36,59,59,.2)
+		padding-bottom: 46px
+		.decs
+			img
+				width: 630px
+				height: 732px
+				top: -710px
+				left: -245px
+			.line
+				width: 892px
+				background: $white
+				opacity: 0.2
+				top: 55%
+				left: 14%
 		.inner
+			padding: 113px 0 70px
+			transform: $decSkew
+			position: relative
+			&::before
+				content: ''
+				position: absolute
+				left: -70px
+				right: 15px
+				top: 0
+				bottom: 0
+				background: rgba(36,59,59,.2)
+			&::after
+				content: ''
+				position: absolute
+				left: 22px
+				top: 46px
+				width: calc(100% + 55px)
+				height: 100%
+				background: rgba(36,59,59,.2)
+				z-index: -1
 			.textContainer
 				padding-left: 135px
 				padding-right: 30px
@@ -589,14 +645,41 @@ header
 				transform: $decSkewFlip
 				width: 376px
 				margin-top: 25px
-				margin-left: 155px
+				margin-left: 115px
 				.formGroup
 					width: 100%
 					&:first-child
 						margin-left: 60px
-						margin-bottom: 25px	
+						margin-bottom: 25px
 				.buttonContainer
 					width: 100%
 					margin-top: 75px
 					display: flex
-					justify-content: center				
+					justify-content: center
+
+footer
+	margin-top: 165px
+	.upperSide
+		padding-bottom: 60px
+		border-bottom: 0.5px solid rgba(255,255,255,.3)
+		.col
+			&:nth-child(2)
+				.item
+					padding-left: 30px				
+		.item
+			display: flex
+			.title
+				flex: 0 0 auto
+				margin-right: 15%
+				p
+					opacity: 0.5
+			.content
+				max-width: 305px
+				p, a
+					font: 18px/23px $bold
+					color: $white
+	.lowerSide
+		padding: 50px 0
+		p
+			font-size: 14px
+			line-height: 17px

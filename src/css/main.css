@@ -130,11 +130,40 @@ textarea::placeholder {
   opacity: .2
 }
 .formButton {
-  padding: 16px 50px;
+  width: 206px;
+  height: 62px;
   color: #fff;
   font: 14px/18px "DIN Pro Bold";
+  letter-spacing: 2px;
   text-transform: uppercase;
-  background: rgba(19,23,24,.4)
+  position: relative;
+  overflow: hidden
+}
+.formButton::before {
+  content: '';
+  width: 191px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: rgba(19,23,24,.4);
+  z-index: -1
+}
+.formButton::after {
+  content: '';
+  position: absolute;
+  background: rgba(36,59,59,.5);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 206px;
+  height: 142px;
+  top: -47px;
+  left: 7px;
+  z-index: -2
 }
 .next,
 .prev {
@@ -640,6 +669,13 @@ header .phone svg {
 #homeTeam {
   margin-top: 125px
 }
+#homeTeam .wrapper .decs .line {
+  width: 1506px;
+  background: #fff;
+  opacity: .3;
+  right: 130px;
+  bottom: -20px
+}
 #homeTeam .title {
   position: relative;
   margin-left: 70px;
@@ -729,20 +765,47 @@ header .phone svg {
   margin-top: 170px
 }
 #homeApplication .wrapper {
+  position: relative;
+  padding-bottom: 46px
+}
+#homeApplication .wrapper .decs img {
+  width: 630px;
+  height: 732px;
+  top: -710px;
+  left: -245px
+}
+#homeApplication .wrapper .decs .line {
+  width: 892px;
+  background: #fff;
+  opacity: .2;
+  top: 55%;
+  left: 14%
+}
+#homeApplication .wrapper .inner {
+  padding: 113px 0 70px;
   -webkit-transform: skewX(-45deg);
   -ms-transform: skewX(-45deg);
   transform: skewX(-45deg);
-  padding: 113px 0 70px;
   position: relative
 }
-#homeApplication .wrapper::before {
+#homeApplication .wrapper .inner::before {
   content: '';
   position: absolute;
   left: -70px;
-  right: -25px;
+  right: 15px;
   top: 0;
   bottom: 0;
   background: rgba(36,59,59,.2)
+}
+#homeApplication .wrapper .inner::after {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 46px;
+  width: calc(100% + 55px);
+  height: 100%;
+  background: rgba(36,59,59,.2);
+  z-index: -1
 }
 #homeApplication .wrapper .inner .textContainer {
   padding-left: 135px;
@@ -825,7 +888,7 @@ header .phone svg {
   transform: skewX(45deg);
   width: 376px;
   margin-top: 25px;
-  margin-left: 155px
+  margin-left: 115px
 }
 #homeApplication .wrapper .inner form .formGroup {
   width: 100%
@@ -843,4 +906,43 @@ header .phone svg {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center
+}
+footer {
+  margin-top: 165px
+}
+footer .upperSide {
+  padding-bottom: 60px;
+  border-bottom: .5px solid rgba(255,255,255,.3)
+}
+footer .upperSide .col:nth-child(2) .item {
+  padding-left: 30px
+}
+footer .upperSide .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+footer .upperSide .item .title {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-right: 15%
+}
+footer .upperSide .item .title p {
+  opacity: .5
+}
+footer .upperSide .item .content {
+  max-width: 305px
+}
+footer .upperSide .item .content a,
+footer .upperSide .item .content p {
+  font: 18px/23px "DIN Pro Bold";
+  color: #fff
+}
+footer .lowerSide {
+  padding: 50px 0
+}
+footer .lowerSide p {
+  font-size: 14px;
+  line-height: 17px
 }
