@@ -79,6 +79,7 @@ textarea
 	color: $white
 	text-transform: uppercase
 	&::placeholder
+		color: $white
 		opacity: 0.2
 // textarea
 // 	resize: none
@@ -194,14 +195,19 @@ header
 		display: flex
 		justify-content: space-between
 		align-items: center
-		padding: 30px 0
-		.dec
-			background: $green
-			opacity: 0.7
+		.decs
+			position: absolute
 			top: 0
 			bottom: 0
-			left: 80%
-			right: -300%
+			left: 0
+			right: 0
+			.dec
+				background: $green
+				opacity: 0.7
+				top: 0
+				bottom: 0
+				left: 80%
+				right: -300%
 	.logo
 		display: flex
 		width: 186px
@@ -213,15 +219,50 @@ header
 			font: 16px/20px $bold
 			color: $white
 	nav
-		ul
+		a
+			color: $white
+			font: $small
+			text-transform: uppercase
+		& > ul
 			display: flex
-			li
+			margin-left: -10px
+			& > li
+				position: relative
 				&:not(:last-child)
-					margin-right: 40px
+					margin-right: 20px
+				&.dropdown
+					a
+						svg
+							transform: rotate(90deg) !important
+					ul
+						opacity: 1
+				&:first-child
+					a
+						display: flex
+						align-items: center
+						svg
+							margin-left: 10px
+							transform: rotate(0)
+							transition: transform .3s
 				a
-					color: $white
-					font: $small
-					text-transform: uppercase
+					padding: 41px 10px
+				ul
+					position: absolute
+					background: #1B2929
+					width: 354px
+					top: 100%
+					left: -200px
+					right: -200px
+					margin: 0 auto
+					padding: 12px 0
+					display: none
+					opacity: 0
+					transition: opacity .3s
+					li
+						&:not(:last-child)
+							border-bottom: 0.3px solid rgba(255,255,255,.4)
+						a
+							padding: 13px 30px
 	.phone
 		display: flex
 		align-items: center

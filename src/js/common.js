@@ -130,6 +130,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+    const headerMenuItems = document.querySelectorAll('header nav > ul > li')
+    Array.from(headerMenuItems).forEach(e => {
+        const dropdown = e.querySelector('ul')
+        if (dropdown) {
+            // e.classList.add('hasArrow')
+            e.addEventListener('mouseenter', () => {
+                if (!e.classList.contains('dropdown')) {
+                    dropdown.style.display = 'block'
+                    setTimeout(() => e.classList.add('dropdown'), 0)
+                }
+            })
+            e.addEventListener('mouseleave', () => {
+                e.classList.remove('dropdown')
+                setTimeout(() => dropdown.style.display = 'none', 300)
+            })
+        }
+    })
+
     const clientsSlider = new Swiper('#clientsSlider', {
         speed: 800,
         spaceBetween: 20,
