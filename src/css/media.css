@@ -1,5 +1,10 @@
-@media screen and (max-width:768px) {
-  body {
-    padding: 0
+@media screen and (max-width:1440px) {
+  #serviceTitle .imgContainer {
+    right: -13%;
+    width: 82%
+  }
+  #serviceTitle .decs .dec {
+    left: 13%;
+    width: 52%
   }
 }

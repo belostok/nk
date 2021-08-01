@@ -81,9 +81,6 @@ textarea
 	&::placeholder
 		color: $white
 		opacity: 0.2
-// textarea
-// 	resize: none
-// 	height: 40px
 
 .formButton
 	width: 206px
@@ -116,34 +113,6 @@ textarea
 		top: -47px
 		left: 7px
 		z-index: -2
-
-// select
-// 	border: 1px solid $black
-// 	width: 100%
-// 	height: 50px
-// 	font: 14px/18px $regular
-// 	padding-left: 13%
-// 	padding-right: 25%
-// 	outline: none
-// 	text-overflow: ellipsis
-// 	white-space: nowap
-// 	overflow: hidden
-// 	appearance: none
-// 	background-image: url(../img/select.svg)
-// 	background-repeat: no-repeat
-// 	background-position: 90% center
-
-// .button
-// 	font-size: 12px
-// 	line-height: 15px
-// 	background: $black
-// 	padding: 10px 40px
-// 	color: $white
-// 	&:hover
-// 		color: $white
-// 	&.white
-// 		background: $white
-// 		color: $black
 
 .prev, .next
 	outline: none
@@ -190,6 +159,10 @@ header
 	transition: background .3s
 	&.active
 		background: $black
+	&.noDec
+		.wrapper
+			.decs
+				display: none
 	.wrapper
 		position: relative
 		display: flex
@@ -245,6 +218,8 @@ header
 							margin-left: 10px
 							transform: rotate(0)
 							transition: transform .3s
+				&.active
+					text-decoration: underline
 				a
 					padding: 41px 10px
 				ul
@@ -710,9 +685,10 @@ header
 			margin-left: -30px
 
 #services
-	margin: 5px 0
+	margin: 5px 0 0
 	.wrapper
-		margin-left: -55px
+		padding-bottom: 5px
+		border-bottom: 0.5px solid rgba(255,255,255,.3)
 		.decs
 			.decLine
 				width: 1395px
@@ -723,9 +699,9 @@ header
 			.leftLine
 				right: 0
 			.rightLine
-				right: -12%
+				right: -11%
 		.inner
-			margin-top: 130px
+			margin: 130px 40px 0 -40px
 			transform: $decSkew
 			.col
 				&:nth-child(odd)
@@ -773,6 +749,148 @@ header
 						line-height: 25px
 						color: $white
 
+#serviceTitle
+	margin-top: 124px
+	padding-bottom: 19px
+	height: 370px
+	.decs
+		.dec
+			top: -124px
+			bottom: 0
+			left: 22%
+			width: 39%
+			background: $green
+			opacity: 0.3
+	.textContainer
+		max-width: 516px
+		height: 100%
+		display: flex
+		align-items: center
+		h1
+			font: 40px/50px $bold
+			text-transform: uppercase
+	.imgContainer
+		position: absolute
+		top: 0
+		bottom: 19px
+		right: -11%
+		width: 75%
+		overflow: hidden
+		transform: $decSkew
+		z-index: -1
+		.imgContainerInner
+			position: absolute
+			top: 0
+			bottom: 0
+			left: -21%
+			right: 0
+			transform: $decSkewFlip
+		
+#serviceText
+	margin-top: 40px
+	padding-bottom: 80px
+	.wrapper
+		p
+			margin-top: 40px
+		ul
+			&.long
+				display: flex
+				justify-content: space-between
+				flex-wrap: wrap
+				li
+					width: calc(50% - 25px)
+			li
+				margin-top: 30px
+				display: flex
+				&::before
+					content: ''
+					flex: 0 0 auto
+					width: 35px
+					height: 15px
+					background-image: url(../img/dec/li.svg)
+					background-repeat: no-repeat
+					background-size: contain
+					margin-right: 30px
+
+#serviceSlider
+	.title
+		padding: 58px 0 39px
+		position: relative
+	.sliderContainer
+		margin-top: 50px
+		padding-bottom: 60px
+		position: relative
+		.decs
+			.topDec
+				bottom: 0
+				top: -113px
+				left: -16%
+				right: -16%
+				background: $green
+				opacity: 0.2
+				z-index: -1	
+		.slider
+			overflow: hidden
+		h3
+			font: 20px/25px $bold
+			text-transform: uppercase
+			margin-bottom: 35px
+		p
+			font-size: 14px
+			line-height: 17px
+			margin-top: 20px
+		.item
+			display: flex
+			.imgContainer
+				height: 268px
+				width: 50%
+				margin-right: 20px
+				flex: 0 0 auto
+		.navigation
+			position: absolute
+			width: 158px
+			height: 30px
+			bottom: -14px
+			right: 48px
+			&::before
+				content: ''
+				position: absolute
+				background: $green
+				transform: $decSkew
+				top: -18px
+				bottom: -103px
+				right: -1000px
+				left: -165px
+			.prev, .next
+				width: 54px
+				top: 0
+				bottom: 0
+				position: absolute
+				cursor: pointer
+				display: flex
+				align-items: center
+				transition: width .3s
+				&::before
+					content: ''
+					position: absolute
+					height: 1px
+					left: 1px
+					right: 0
+					top: 0
+					bottom: 0
+					margin: auto 0
+					background: $white
+				&:hover
+					width: 102px
+			.prev
+				right: 104px
+			.next
+				left: 104px
+				justify-content: flex-end
+				&::before
+					left: 0
+					right: 1px
+
 footer
 	.homeFooter
 		margin-top: 165px
@@ -802,7 +920,6 @@ footer
 				line-height: 17px
 	.secFooter
 		.wrapper
-			border-top: 0.5px solid rgba(255,255,255,.3)
 			.textContainer
 				padding: 50px 0
 				p

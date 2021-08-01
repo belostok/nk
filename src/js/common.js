@@ -148,6 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+    const serviceList = document.querySelectorAll('#serviceText ul')
+    Array.from(serviceList).forEach(e => {
+        const serviceListItems = e.querySelectorAll('li')
+        serviceListItems.length > 3 && e.classList.add('long')
+    })
+
+    
+
+
     const clientsSlider = new Swiper('#clientsSlider', {
         speed: 800,
         spaceBetween: 20,
@@ -170,6 +179,27 @@ document.addEventListener('DOMContentLoaded', () => {
         navigation: {
             nextEl: '#homePartners .next',
             prevEl: '#homePartners .prev'
+        }
+    })
+
+    const singleSlider = new Swiper('#singleSlider', {
+        speed: 800,
+        spaceBetween: 20,
+        slidesPerView: 1,
+        loop: true,
+        navigation: {
+            nextEl: '#serviceSlider .next',
+            prevEl: '#serviceSlider .prev'
+        }
+    })
+    const doubleSlider = new Swiper('#doubleSlider', {
+        speed: 600,
+        spaceBetween: 20,
+        slidesPerView: 2,
+        loop: true,
+        navigation: {
+            nextEl: '#serviceSlider .next',
+            prevEl: '#serviceSlider .prev'
         }
     })
 
