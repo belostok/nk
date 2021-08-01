@@ -246,7 +246,8 @@ header .wrapper .decs {
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0
+  right: 0;
+  z-index: -1
 }
 header .wrapper .decs .dec {
   background: #243b3b;
@@ -973,42 +974,145 @@ header .phone svg {
   -ms-flex-pack: center;
   justify-content: center
 }
-footer {
+.secTitle .title {
+  padding: 54px 0 43px;
+  margin-top: 140px;
+  position: relative
+}
+.secTitle .title h1 {
+  font: 36px/45px "DIN Pro Bold";
+  text-transform: uppercase;
+  margin-left: -30px
+}
+#services {
+  margin: 5px 0
+}
+#services .wrapper {
+  margin-left: -55px
+}
+#services .wrapper .decs .decLine {
+  width: 1395px;
+  background: #fff;
+  opacity: .1;
+  top: 305px;
+  z-index: 1
+}
+#services .wrapper .decs .leftLine {
+  right: 0
+}
+#services .wrapper .decs .rightLine {
+  right: -12%
+}
+#services .wrapper .inner {
+  margin-top: 130px;
+  -webkit-transform: skewX(-45deg);
+  -ms-transform: skewX(-45deg);
+  transform: skewX(-45deg)
+}
+#services .wrapper .inner .col:nth-child(odd) {
+  margin-top: -130px
+}
+#services .wrapper .inner .col:nth-child(odd) .item .textContainer {
+  right: 55%
+}
+#services .wrapper .inner .col:nth-child(even) .item .textContainer {
+  left: 80%
+}
+#services .wrapper .inner .item {
+  height: 136px;
+  width: 270px;
+  margin-bottom: 30px;
+  position: relative
+}
+#services .wrapper .inner .item .imgContainer {
+  overflow: hidden;
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: -1px;
+  bottom: -1px;
+  background: -webkit-gradient(linear,left bottom,left top,from(rgba(36,59,59,.6)),to(rgba(36,59,59,.6)));
+  background: -o-linear-gradient(bottom,rgba(36,59,59,.6),rgba(36,59,59,.6));
+  background: linear-gradient(0deg,rgba(36,59,59,.6),rgba(36,59,59,.6))
+}
+#services .wrapper .inner .item .imgContainer .imgContainerInner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -25%;
+  right: -25%;
+  margin: 0 auto;
+  z-index: -1
+}
+#services .wrapper .inner .item .imgContainer .imgContainerInner img {
+  -webkit-transform: skewX(45deg);
+  -ms-transform: skewX(45deg);
+  transform: skewX(45deg)
+}
+#services .wrapper .inner .item .textContainer {
+  width: 294px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transform: skewX(45deg);
+  -ms-transform: skewX(45deg);
+  transform: skewX(45deg)
+}
+#services .wrapper .inner .item .textContainer h2 {
+  font-size: 20px;
+  line-height: 25px;
+  color: #fff
+}
+footer .homeFooter {
   margin-top: 165px
 }
-footer .upperSide {
+footer .homeFooter .upperSide {
   padding-bottom: 60px;
   border-bottom: .5px solid rgba(255,255,255,.3)
 }
-footer .upperSide .col:nth-child(2) .item {
+footer .homeFooter .upperSide .col:nth-child(2) .item {
   padding-left: 30px
 }
-footer .upperSide .item {
+footer .homeFooter .upperSide .item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex
 }
-footer .upperSide .item .title {
+footer .homeFooter .upperSide .item .title {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-right: 15%
 }
-footer .upperSide .item .title p {
+footer .homeFooter .upperSide .item .title p {
   opacity: .5
 }
-footer .upperSide .item .content {
+footer .homeFooter .upperSide .item .content {
   max-width: 305px
 }
-footer .upperSide .item .content a,
-footer .upperSide .item .content p {
+footer .homeFooter .upperSide .item .content a,
+footer .homeFooter .upperSide .item .content p {
   font: 18px/23px "DIN Pro Bold";
   color: #fff
 }
-footer .lowerSide {
+footer .homeFooter .lowerSide {
   padding: 50px 0
 }
-footer .lowerSide p {
+footer .homeFooter .lowerSide p {
+  font-size: 14px;
+  line-height: 17px
+}
+footer .secFooter .wrapper {
+  border-top: .5px solid rgba(255,255,255,.3)
+}
+footer .secFooter .wrapper .textContainer {
+  padding: 50px 0
+}
+footer .secFooter .wrapper .textContainer p {
   font-size: 14px;
   line-height: 17px
 }
