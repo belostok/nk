@@ -891,6 +891,64 @@ header
 					left: 0
 					right: 1px
 
+#projects
+	margin-top: 96px
+	padding-bottom: 110px
+	&::after
+		content: ''
+		position: absolute
+		background: $green
+		height: 117px
+		bottom: -117px
+		right: -1000px
+		left: 42.5%
+		transform: $decSkew
+	.item
+		margin-bottom: 27px
+		position: relative
+		&::before
+			content: ''
+			position: absolute
+			top: -30px
+			bottom: 30px
+			left: 8%
+			right: -11%
+			background: $green
+			opacity: 0.2
+			z-index: -1
+			transform: $decSkew
+		&:nth-child(even)
+			margin-bottom: 115px
+			&::before
+				top: 30px
+				bottom: -30px
+				left: -11%
+				right: 8%
+			.row
+				justify-content: space-between
+				.col
+					&:first-child
+						order: 2
+					&:last-child
+						order: 1
+		&:last-child
+			margin-bottom: 0
+		.imgContainer
+			height: 350px
+			width: 100%
+		.textContainer
+			display: flex
+			flex-direction: column
+			justify-content: center
+			height: 100%
+			h3
+				font: 24px/30px $bold
+				text-transform: uppercase
+				margin-bottom: 40px
+			p
+				font-size: 14px
+				line-height: 17px
+
 footer
 	.homeFooter
 		margin-top: 165px

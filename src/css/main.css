@@ -1270,6 +1270,93 @@ header .phone svg {
   left: 0;
   right: 1px
 }
+#projects {
+  margin-top: 96px;
+  padding-bottom: 110px
+}
+#projects::after {
+  content: '';
+  position: absolute;
+  background: #243b3b;
+  height: 117px;
+  bottom: -117px;
+  right: -1000px;
+  left: 42.5%;
+  -webkit-transform: skewX(-45deg);
+  -ms-transform: skewX(-45deg);
+  transform: skewX(-45deg)
+}
+#projects .item {
+  margin-bottom: 27px;
+  position: relative
+}
+#projects .item::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  bottom: 30px;
+  left: 8%;
+  right: -11%;
+  background: #243b3b;
+  opacity: .2;
+  z-index: -1;
+  -webkit-transform: skewX(-45deg);
+  -ms-transform: skewX(-45deg);
+  transform: skewX(-45deg)
+}
+#projects .item:nth-child(even) {
+  margin-bottom: 115px
+}
+#projects .item:nth-child(even)::before {
+  top: 30px;
+  bottom: -30px;
+  left: -11%;
+  right: 8%
+}
+#projects .item:nth-child(even) .row {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+#projects .item:nth-child(even) .row .col:first-child {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2
+}
+#projects .item:nth-child(even) .row .col:last-child {
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1
+}
+#projects .item:last-child {
+  margin-bottom: 0
+}
+#projects .item .imgContainer {
+  height: 350px;
+  width: 100%
+}
+#projects .item .textContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%
+}
+#projects .item .textContainer h3 {
+  font: 24px/30px "DIN Pro Bold";
+  text-transform: uppercase;
+  margin-bottom: 40px
+}
+#projects .item .textContainer p {
+  font-size: 14px;
+  line-height: 17px
+}
 footer .homeFooter {
   margin-top: 165px
 }
