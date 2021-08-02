@@ -1,3 +1,14 @@
+@media screen and (max-width:1600px) {
+  #contacts .map {
+    left: 28%
+  }
+  #contacts .map::before {
+    left: -32%
+  }
+  #contacts::before {
+    right: 16%
+  }
+}
 @media screen and (max-width:1440px) {
   #serviceTitle .imgContainer {
     right: -13%;
@@ -9,5 +20,19 @@
   }
   #projects::after {
     left: 40%
+  }
+  #contacts .map {
+    left: 25vw
+  }
+  #contacts .map::before {
+    left: -25vw
+  }
+  #contacts::before {
+    right: 13%
+  }
+}
+@media screen and (max-width:1366px) {
+  #contacts::before {
+    right: 7%
   }
 }

@@ -949,6 +949,72 @@ header
 				font-size: 14px
 				line-height: 17px
 
+.contactsTitle
+	.title
+		margin-left: -34px
+
+#contacts
+	margin-top: 10px
+	min-height: calc(100vh - 409px)
+	display: flex
+	align-items: center
+	&::before
+		content: ''
+		position: absolute
+		width: 535px
+		background: $green
+		opacity: 0.4
+		transform: $decSkew
+		right: 21%
+		top: -295px
+		bottom: -117px
+		z-index: -1
+	.wrapper
+		width: 100%
+		height: 480px
+		position: relative
+	.textContainer
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: center
+		position: relative
+		a
+			color: $white
+		.item
+			display: flex
+			&:not(:last-child)
+				margin-bottom: 80px
+			.title
+				flex: 0 0 auto
+				width: 23%
+				p
+					font-size: 20px
+					line-height: 25px
+					opacity: 0.5
+					text-transform: lowercase
+			.content
+				p, a
+					font: 18px/23px $bold
+	.map
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		left: 32vw
+		&::before
+			content: ''
+			position: absolute
+			left: -19vw
+			top: -1px
+			bottom: -1px
+			width: 610px
+			background: $black
+			transform: $decSkew
+		iframe
+			width: 100%
+			height: 100%
+
 footer
 	.homeFooter
 		margin-top: 165px

@@ -1357,6 +1357,102 @@ header .phone svg {
   font-size: 14px;
   line-height: 17px
 }
+.contactsTitle .title {
+  margin-left: -34px
+}
+#contacts {
+  margin-top: 10px;
+  min-height: calc(100vh - 409px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+#contacts::before {
+  content: '';
+  position: absolute;
+  width: 535px;
+  background: #243b3b;
+  opacity: .4;
+  -webkit-transform: skewX(-45deg);
+  -ms-transform: skewX(-45deg);
+  transform: skewX(-45deg);
+  right: 21%;
+  top: -295px;
+  bottom: -117px;
+  z-index: -1
+}
+#contacts .wrapper {
+  width: 100%;
+  height: 480px;
+  position: relative
+}
+#contacts .textContainer {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative
+}
+#contacts .textContainer a {
+  color: #fff
+}
+#contacts .textContainer .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+#contacts .textContainer .item:not(:last-child) {
+  margin-bottom: 80px
+}
+#contacts .textContainer .item .title {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 23%
+}
+#contacts .textContainer .item .title p {
+  font-size: 20px;
+  line-height: 25px;
+  opacity: .5;
+  text-transform: lowercase
+}
+#contacts .textContainer .item .content a,
+#contacts .textContainer .item .content p {
+  font: 18px/23px "DIN Pro Bold"
+}
+#contacts .map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 32vw
+}
+#contacts .map::before {
+  content: '';
+  position: absolute;
+  left: -19vw;
+  top: -1px;
+  bottom: -1px;
+  width: 610px;
+  background: #131718;
+  -webkit-transform: skewX(-45deg);
+  -ms-transform: skewX(-45deg);
+  transform: skewX(-45deg)
+}
+#contacts .map iframe {
+  width: 100%;
+  height: 100%
+}
 footer .homeFooter {
   margin-top: 165px
 }
