@@ -739,6 +739,85 @@ header .phone svg {
   transform: skewX(45deg);
   color: #fff
 }
+.commonTeam .team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap
+}
+.commonTeam .team .item {
+  width: 315px;
+  min-height: 370px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px
+}
+.commonTeam .team .item::before {
+  content: '';
+  position: absolute;
+  height: 450px;
+  width: 402px;
+  background: #1b2929;
+  top: -75px;
+  left: 0;
+  -webkit-transform: skewX(-45deg);
+  -ms-transform: skewX(-45deg);
+  transform: skewX(-45deg)
+}
+.commonTeam .team .item:first-child {
+  margin-left: 50px
+}
+.commonTeam .team .item:not(:first-child) {
+  margin-left: 30px
+}
+.commonTeam .team .item:nth-child(10),
+.commonTeam .team .item:nth-child(4) {
+  margin-left: 253px
+}
+.commonTeam .team .item .upperSide {
+  height: 237px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end
+}
+.commonTeam .team .item .upperSide .titleContainer {
+  padding-left: 24px
+}
+.commonTeam .team .item .upperSide .titleContainer h3 {
+  font: 16px/20px "DIN Pro Bold";
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  max-width: 102px
+}
+.commonTeam .team .item .upperSide .titleContainer p {
+  font-size: 12px;
+  line-height: 15px;
+  max-width: 100px
+}
+.commonTeam .team .item .upperSide .imgContainer {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 165px;
+  height: 100%
+}
+.commonTeam .team .item .lowerSide {
+  padding: 20px 0 27px 24px;
+  max-width: 208px;
+  position: relative
+}
+.commonTeam .team .item .lowerSide p {
+  font-size: 14px;
+  line-height: 17px
+}
 #homeTeam {
   margin-top: 125px
 }
@@ -755,84 +834,7 @@ header .phone svg {
   padding: 50px 0
 }
 #homeTeam .team {
-  margin-top: 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap
-}
-#homeTeam .team .item {
-  width: 315px;
-  min-height: 370px;
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 30px
-}
-#homeTeam .team .item::before {
-  content: '';
-  position: absolute;
-  height: 450px;
-  width: 402px;
-  background: #1b2929;
-  top: -75px;
-  left: 0;
-  -webkit-transform: skewX(-45deg);
-  -ms-transform: skewX(-45deg);
-  transform: skewX(-45deg)
-}
-#homeTeam .team .item:first-child {
-  margin-left: 50px
-}
-#homeTeam .team .item:not(:first-child) {
-  margin-left: 30px
-}
-#homeTeam .team .item:nth-child(10),
-#homeTeam .team .item:nth-child(4) {
-  margin-left: 253px
-}
-#homeTeam .team .item .upperSide {
-  height: 237px;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end
-}
-#homeTeam .team .item .upperSide .titleContainer {
-  padding-left: 24px
-}
-#homeTeam .team .item .upperSide .titleContainer h3 {
-  font: 16px/20px "DIN Pro Bold";
-  text-transform: uppercase;
-  margin-bottom: 25px;
-  max-width: 102px
-}
-#homeTeam .team .item .upperSide .titleContainer p {
-  font-size: 12px;
-  line-height: 15px;
-  max-width: 100px
-}
-#homeTeam .team .item .upperSide .imgContainer {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
-  width: 165px;
-  height: 100%
-}
-#homeTeam .team .item .lowerSide {
-  padding: 20px 0 27px 24px;
-  max-width: 208px;
-  position: relative
-}
-#homeTeam .team .item .lowerSide p {
-  font-size: 14px;
-  line-height: 17px
+  margin-top: 70px
 }
 #homeApplication {
   margin-top: 170px
@@ -1452,6 +1454,78 @@ header .phone svg {
 #contacts .map iframe {
   width: 100%;
   height: 100%
+}
+#aboutTeam .wrapper {
+  position: relative
+}
+#aboutTeam .wrapper .decs img {
+  top: -298px;
+  left: -242px
+}
+#aboutTeam .team {
+  margin-top: 36px
+}
+#aboutTeam .team .item:nth-child(10),
+#aboutTeam .team .item:nth-child(4) {
+  margin-left: 0
+}
+#aboutTeam .team .item:nth-child(1),
+#aboutTeam .team .item:nth-child(13),
+#aboutTeam .team .item:nth-child(7) {
+  margin-left: 150px
+}
+#aboutBanner {
+  margin-top: 60px
+}
+#aboutBanner .wrapper {
+  border-bottom: .5px solid rgba(255,255,255,.3);
+  padding-bottom: 120px;
+  position: relative
+}
+#aboutBanner .wrapper::after,
+#aboutBanner .wrapper::before {
+  content: '';
+  position: absolute;
+  -webkit-transform: skewX(-45deg);
+  -ms-transform: skewX(-45deg);
+  transform: skewX(-45deg);
+  background: #243b3b;
+  opacity: .2;
+  z-index: -1
+}
+#aboutBanner .wrapper::before {
+  top: 0;
+  bottom: 120px;
+  left: -7%;
+  right: -4%
+}
+#aboutBanner .wrapper::after {
+  top: 60px;
+  bottom: 60px;
+  left: -5%;
+  right: -6%
+}
+#aboutBanner .wrapper .inner {
+  padding: 90px 30px 139px;
+  position: relative
+}
+#aboutBanner .wrapper .inner p {
+  font-size: 18px;
+  line-height: 55px;
+  text-transform: uppercase
+}
+#aboutBanner .wrapper .inner a {
+  font: 18px/23px "DIN Pro Bold";
+  text-transform: uppercase;
+  color: #fff;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  position: absolute;
+  bottom: 62px;
+  right: 0;
+  left: 34%;
+  margin: 0 auto
 }
 footer .homeFooter {
   margin-top: 165px
