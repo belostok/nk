@@ -1272,11 +1272,11 @@ header .phone svg {
   left: 0;
   right: 1px
 }
-#projects {
+#clients {
   margin-top: 96px;
   padding-bottom: 110px
 }
-#projects::after {
+#clients::after {
   content: '';
   position: absolute;
   background: #243b3b;
@@ -1288,11 +1288,11 @@ header .phone svg {
   -ms-transform: skewX(-45deg);
   transform: skewX(-45deg)
 }
-#projects .item {
+#clients .item {
   margin-bottom: 27px;
   position: relative
 }
-#projects .item::before {
+#clients .item::before {
   content: '';
   position: absolute;
   top: -30px;
@@ -1306,38 +1306,38 @@ header .phone svg {
   -ms-transform: skewX(-45deg);
   transform: skewX(-45deg)
 }
-#projects .item:nth-child(even) {
+#clients .item:nth-child(even) {
   margin-bottom: 115px
 }
-#projects .item:nth-child(even)::before {
+#clients .item:nth-child(even)::before {
   top: 30px;
   bottom: -30px;
   left: -11%;
   right: 8%
 }
-#projects .item:nth-child(even) .row {
+#clients .item:nth-child(even) .row {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between
 }
-#projects .item:nth-child(even) .row .col:first-child {
+#clients .item:nth-child(even) .row .col:first-child {
   -webkit-box-ordinal-group: 3;
   -ms-flex-order: 2;
   order: 2
 }
-#projects .item:nth-child(even) .row .col:last-child {
+#clients .item:nth-child(even) .row .col:last-child {
   -webkit-box-ordinal-group: 2;
   -ms-flex-order: 1;
   order: 1
 }
-#projects .item:last-child {
+#clients .item:last-child {
   margin-bottom: 0
 }
-#projects .item .imgContainer {
+#clients .item .imgContainer {
   height: 350px;
   width: 100%
 }
-#projects .item .textContainer {
+#clients .item .textContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1350,12 +1350,12 @@ header .phone svg {
   justify-content: center;
   height: 100%
 }
-#projects .item .textContainer h3 {
+#clients .item .textContainer h3 {
   font: 24px/30px "DIN Pro Bold";
   text-transform: uppercase;
   margin-bottom: 40px
 }
-#projects .item .textContainer p {
+#clients .item .textContainer p {
   font-size: 14px;
   line-height: 17px
 }
