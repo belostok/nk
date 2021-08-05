@@ -13,6 +13,13 @@
   font-style: normal
 }
 @font-face {
+  font-family: 'DIN Pro Medium';
+  src: url(../fonts/DINPro-Medium.eot);
+  src: url(../fonts/DINPro-Medium.eot?#iefix) format("embedded-opentype"),url(../fonts/DINPro-Medium.woff) format("woff"),url(../fonts/DINPro-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal
+}
+@font-face {
   font-family: 'DIN Pro Bold';
   src: url(../fonts/DINPro-Bold.eot);
   src: url(../fonts/DINPro-Bold.eot?#iefix) format("embedded-opentype"),url(../fonts/DINPro-Bold.woff) format("woff"),url(../fonts/DINPro-Bold.ttf) format("truetype");

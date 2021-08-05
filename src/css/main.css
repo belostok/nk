@@ -86,6 +86,86 @@ strong {
   top: 0;
   bottom: 0
 }
+#sandwich {
+  display: none;
+  width: 31px;
+  height: 16px;
+  z-index: 9;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end
+}
+#sandwich .sw-topper {
+  position: relative;
+  top: 0;
+  width: 13px;
+  height: 2px;
+  background: #fff;
+  border: none;
+  border-radius: 4px;
+  -webkit-transition: top .2s,width .3s,-webkit-transform .5s;
+  transition: top .2s,width .3s,-webkit-transform .5s;
+  -o-transition: transform .5s,top .2s,width .3s;
+  transition: transform .5s,top .2s,width .3s;
+  transition: transform .5s,top .2s,width .3s,-webkit-transform .5s
+}
+#sandwich .sw-bottom {
+  position: relative;
+  width: 22px;
+  height: 2px;
+  top: 6px;
+  background: #fff;
+  border: none;
+  border-radius: 4px;
+  -webkit-transition: top .2s,width .3s,-webkit-transform .5s;
+  transition: top .2s,width .3s,-webkit-transform .5s;
+  -o-transition: transform .5s,top .2s,width .3s;
+  transition: transform .5s,top .2s,width .3s;
+  transition: transform .5s,top .2s,width .3s,-webkit-transform .5s;
+  -webkit-transition-delay: .2s,0s;
+  -o-transition-delay: .2s,0s;
+  transition-delay: .2s,0s
+}
+#sandwich .sw-footer {
+  position: relative;
+  width: 31px;
+  height: 2px;
+  top: 12px;
+  background: #fff;
+  border: none;
+  border-radius: 4px;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  -webkit-transition-delay: .1s;
+  -o-transition-delay: .1s;
+  transition-delay: .1s
+}
+#sandwich.active .sw-topper {
+  top: 7px;
+  width: 31px;
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg)
+}
+#sandwich.active .sw-bottom {
+  top: 5px;
+  width: 31px;
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg)
+}
+#sandwich.active .sw-footer {
+  opacity: 0;
+  top: 0;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
 form {
   width: 100%
 }
@@ -435,7 +515,7 @@ header .phone svg {
   top: 300px
 }
 #homeTitle .title h2 {
-  font: 30px/27px #c4c4c4;
+  font: 30px/27px "DIN Pro Light";
   letter-spacing: 10px;
   text-transform: uppercase;
   margin-bottom: 35px

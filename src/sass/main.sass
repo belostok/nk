@@ -62,6 +62,56 @@ strong
 	top: 0
 	bottom: 0
 
+#sandwich
+	display: none
+	width: 31px
+	height: 16px
+	z-index: 9
+	flex-direction: column
+	align-items: flex-end
+	.sw-topper 
+		position: relative
+		top: 0
+		width: 13px
+		height: 2px
+		background: $white
+		border: none
+		border-radius: 4px
+		transition: transform 0.5s, top 0.2s, width .3s
+	.sw-bottom
+		position: relative
+		width: 22px
+		height: 2px
+		top: 6px
+		background: $white
+		border: none
+		border-radius: 4px
+		transition: transform 0.5s, top 0.2s, width .3s
+		transition-delay: 0.2s, 0s
+	.sw-footer
+		position: relative
+		width: 31px
+		height: 2px
+		top: 12px
+		background: $white
+		border: none
+		border-radius: 4px
+		transition: all 0.5s
+		transition-delay: 0.1s
+	&.active
+		.sw-topper
+			top: 7px
+			width: 31px
+			transform: rotate(135deg)
+		.sw-bottom
+			top: 5px
+			width: 31px
+			transform: rotate(-135deg)
+		.sw-footer
+			opacity: 0
+			top: 0
+			transform: rotate(180deg)
+
 form
 	width: 100%
 
@@ -651,7 +701,7 @@ header
 							position: relative
 							&::before
 								content: ''
-								background: $light
+								background: $lightGray
 								width: 100px
 								height: 100%
 								transform: $decRotate

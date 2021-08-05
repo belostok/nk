@@ -93,10 +93,30 @@ const formSend = async e => {
     }
 }
 
+const header = document.querySelector('header')
+const sandwich = document.getElementById('sandwich')
+const menu = document.querySelector('header nav')
+const menuUl = menu.querySelector('ul')
+sandwich.addEventListener('click', () => {
+    if(!sandwich.classList.contains('active')) {
+        menu.style.display = 'block'
+        setTimeout(() => classActive(sandwich, menu), 0)
+    } else {
+        classActive(sandwich, menu)
+        setTimeout(() => menu.style.display = 'none', 300)
+    }
+})
+
+menu.addEventListener('scroll', e => {
+    const offset = e.target.scrollTop
+    offset > 50 ?
+    header.classList.add('menuScroll') :
+    header.classList.remove('menuScroll')
+})
+
 document.addEventListener('scroll', () => {
 
     const offset = window.scrollY
-    const header = document.querySelector('header')
     offset > 100 ?
         header.classList.add('active') :
         header.classList.remove('active')
@@ -110,11 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const textAngle = document.querySelectorAll('.textAngle')
     Array.from(textAngle).forEach(e => {
+        if (isMobile && e.classList.contains('mobile')) { return false }
         const height = e.offsetHeight
         const compStyles = window.getComputedStyle(e)
         const lineHeight = compStyles.getPropertyValue('line-height').replace('px', '')
         const numberOfLines = height / lineHeight
-        const offsetIncrement = 60
+        const offsetIncrement = isMobile ? 45 : 60
         let highestValue = numberOfLines * offsetIncrement
         const parentNode = e.parentNode
         parentNode.style.marginLeft = `-${offsetIncrement}px`
@@ -122,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newSpan = document.createElement('span')
             newSpan.classList.add('text-offset')
             newSpan.style.width = `${highestValue}px`
-            newSpan.style.height = `${lineHeight}px` 
+            newSpan.style.height = `${lineHeight}px`
             newSpan.style.float = 'left'
             newSpan.style.clear = 'left'
             parentNode.insertBefore(newSpan, e)
@@ -133,8 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerMenuItems = document.querySelectorAll('header nav > ul > li')
     Array.from(headerMenuItems).forEach(e => {
         const dropdown = e.querySelector('ul')
-        if (dropdown) {
-            // e.classList.add('hasArrow')
+        if (dropdown && !isMobile) {
             e.addEventListener('mouseenter', () => {
                 if (!e.classList.contains('dropdown')) {
                     dropdown.style.display = 'block'
@@ -142,8 +162,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             e.addEventListener('mouseleave', () => {
-                e.classList.remove('dropdown')
-                setTimeout(() => dropdown.style.display = 'none', 300)
+                if (!isMobile) {
+                    e.classList.remove('dropdown')
+                    setTimeout(() => dropdown.style.display = 'none', 300)
+                }
             })
         }
     })
@@ -154,7 +176,9 @@ document.addEventListener('DOMContentLoaded', () => {
         serviceListItems.length > 3 && e.classList.add('long')
     })
 
-    
+
+
+
 
 
     const clientsSlider = new Swiper('#clientsSlider', {
@@ -169,9 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     const partnersSlider = new Swiper('#partnersSlider', {
-        speed: 600,
+        speed: 300,
         spaceBetween: 20,
-        slidesPerView: 5,
+        slidesPerView: 3,
         loop: true,
         autoplay: {
             delay: 4000
@@ -179,6 +203,12 @@ document.addEventListener('DOMContentLoaded', () => {
         navigation: {
             nextEl: '#homePartners .next',
             prevEl: '#homePartners .prev'
+        },
+        breakpoints: {
+            768: {
+                speed: 600,
+                slidesPerView: 5
+            }
         }
     })
 

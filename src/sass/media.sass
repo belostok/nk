@@ -27,3 +27,367 @@
 @media screen and (max-width: 1366px)
     #contacts::before
         right: 7%
+
+@media screen and (max-width: 768px)
+    .container
+        padding: 0 20px
+    h2
+        font-size: 24px
+        line-height: 30px
+    header
+        &.menuScroll
+            #sandwich, .phone
+                opacity: 0
+    header .wrapper
+        padding: 16px 10px 16px 0
+    header .wrapper .decs .dec
+        left: 84%
+    header .logo
+        width: auto
+        img
+            width: 59px
+        h3
+            display: none
+    header nav
+        position: fixed
+        overflow-y: scroll
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        opacity: 0
+        display: none
+        transition: opacity .3s
+        &.active
+            opacity: 1
+        ul
+            display: block
+    header nav > ul
+        margin-left: 0
+        padding: 127px 40px 112px
+        position: relative
+        &::before
+            content: ''
+            background: $green
+            transform: $decSkew
+            position: absolute
+            left: -310px
+            right: -280px
+            top: 0
+            bottom: 0
+    header nav > ul > li:not(:last-child)
+        margin-right: 0
+    header nav > ul > li:first-child a svg
+        display: none
+    header nav > ul > li a
+        padding: 25px 0
+    header nav > ul > li > a
+        font-size: 24px
+        line-height: 30px
+    header nav > ul > li ul
+        display: block
+        opacity: 1
+        position: relative
+        width: 100%
+        top: auto
+        left: auto
+        right: auto
+        margin: -4px 0 0
+        padding: 0 0 16px 0
+        background: transparent
+    header nav > ul > li ul li:not(:last-child)
+        border-bottom: none
+    header nav > ul > li ul li a
+        padding: 9px 0
+        font-family: $medium
+    #sandwich
+        display: flex
+        opacity: 1
+        transition: opacity .3s
+    header .phone
+        position: relative
+        opacity: 1
+        transition: opacity .3s
+    header .phone svg
+        margin-right: 12px
+        width: 10px
+        height: 10px
+
+    #homeTitle
+        height: calc(100vh + 117px)
+    #homeTitle::before
+        content: none
+    #homeTitle .wrapper
+        height: 100vh
+    #homeTitle .background
+        padding-bottom: 30px
+        &::before
+            content: ''
+            position: absolute
+            left: -58px
+            bottom: 30px
+            background: $black
+            transform: $decSkew
+            height: 115px
+            width: 235px
+            z-index: 1
+    #homeTitle .background::after
+        bottom: 30px
+    #homeTitle .title
+        text-align: center
+    #homeTitle .title h2
+        font-size: 18px
+        line-height: 22px
+        letter-spacing: 5px
+        margin-bottom: 20px
+    #homeTitle .title h1
+        font-size: 40px
+        line-height: 50px
+        max-width: 271px
+        margin: 0 auto 33px
+    #homeTitle .title .decs .topLeftBlock
+        display: none
+    #homeTitle > .decs .bottomRightBlock
+        width: 190px
+        height: 180px
+        right: -100px
+    #homeTitle > .decs .bottomRightLine
+        width: 500px
+        right: auto
+        left: 70px
+        bottom: 215px
+    #homeTitle .title .decs .topLeftLine
+        left: -1240px
+
+    #homeClients
+        padding-top: 12px
+    #homeClients .title .decs img
+        display: none
+    #homeClients .title
+        padding: 37px 0 24px
+        justify-content: space-between
+        .decs
+            position: absolute
+            top: 0
+            bottom: 0
+    .titleDec
+        width: 30px
+        left: 20px
+    #homeClients .title .navigation
+        width: 130px
+        margin-left: 0
+    #homeClients .title .navigation .prev
+        right: 79px
+    #homeClients .title .navigation .next
+        left: 79px
+    #homeClients .title .navigation .next:hover, 
+    #homeClients .title .navigation .prev:hover
+        width: 50px
+    #homeClients .sliderContainer
+        margin: 36px 10px 0
+        width: auto
+        overflow: visible
+    #clientsSlider
+        overflow: hidden
+    #homeClients .sliderContainer .item .imgContainer
+        padding: 0
+    #homeClients .sliderContainer .item .imgContainer .image
+        height: 48vw
+    #homeClients .sliderContainer .item .textContainer .text h3
+        font-size: 20px
+        line-height: 25px
+        margin-bottom: 30px
+        text-align: center
+    #homeClients .sliderContainer .item .textContainer .text p
+        font-size: 12px
+        line-height: 15px
+    #homeClients .sliderContainer .item .textContainer
+        padding-top: 20px
+    #homeClients .sliderContainer::before
+        top: -17px
+        left: 0
+
+    #homePartners
+        margin-top: 20px
+    #homePartners .wrapper
+        padding: 20px 0
+    #homePartners .wrapper::before
+        left: -37px
+        right: -37px
+    #homePartners .wrapper .next, 
+    #homePartners .wrapper .prev
+        display: none
+    #homePartners .sliderContainer .item
+        height: 57px
+    #homePartners .sliderContainer .item img
+        max-width: 71px
+
+    #homeServices .wrapper > .decs,
+    #homeServices .title .decs img
+        display: none
+    #homeServices .title
+        padding: 47px 0 34px
+    #homeServices .services
+        margin: 40px 0 0 10px
+        width: auto
+        transform: none
+    #homeServices .services .image
+        display: none
+    #homeServices .services .inner
+        justify-content: space-between
+    #homeServices .services .inner .side
+        width: calc(50% - 15px)
+        margin-bottom: 34px
+    #homeServices .services .inner .side .item h3
+        transform: none
+        font-size: 14px
+        line-height: 18px
+    #homeServices .services .inner .side .item::before
+        width: 145px
+        height: 38px
+        top: -10px
+        left: 0
+        z-index: -1
+        transform: $decSkew
+
+    #homeTeam
+        margin-top: 80px
+        .wrapper
+            margin: 0 -10px
+            width: auto
+    #homeTeam .title
+        margin-left: 0
+        padding: 47px 0 31px
+    #homeTeam .team
+        margin-top: 96px
+        justify-content: space-between
+    #homeTeam .wrapper .decs .line
+        width: 800px
+        right: auto
+        left: -57vw
+        bottom: auto
+        top: 20vw
+        z-index: -2
+    .commonTeam .team .item .lowerSide
+        display: none
+    .commonTeam .team .item:first-child,
+    .commonTeam .team .item:nth-child(10), 
+    .commonTeam .team .item:nth-child(4),
+    .commonTeam .team .item:not(:first-child)
+        margin-left: 0
+    .commonTeam .team .item
+        margin-bottom: 44px
+        width: calc(50% - 10px)
+        min-height: 53vw
+        &:nth-child(even)
+            margin-top: -52vw                                          
+    .commonTeam .team .item .upperSide
+        height: 34vw
+        align-items: flex-start
+    .commonTeam .team .item .upperSide .titleContainer
+        padding-left: 10px
+        margin-top: 30vw
+    .commonTeam .team .item .upperSide .titleContainer h3
+        font-size: 10px
+        line-height: 13px
+        margin-bottom: 10px
+        max-width: 55px
+    .commonTeam .team .item .upperSide .titleContainer p
+        max-width: 66px
+        font-size: 8px
+        line-height: 10px
+    .commonTeam .team .item .upperSide .imgContainer
+        width: 50%
+    .commonTeam .team .item::before
+        height: 66vw
+        width: 56vw
+        top: -10vw
+
+    #homeApplication
+        margin-top: -14px
+    #homeApplication .wrapper
+        padding-bottom: 0
+    #homeApplication .wrapper .decs
+        display: none
+    #homeApplication .wrapper .inner
+        padding: 20px 0 74px
+        transform: none
+    #homeApplication .wrapper .inner .textContainer .socialContainer, 
+    #homeApplication .wrapper .inner .textContainer h3, 
+    #homeApplication .wrapper .inner .textContainer p
+        transform: none
+    #homeApplication .wrapper .inner .textContainer h3
+        font-size: 20px
+        line-height: 25px
+        margin-bottom: 30px
+    #homeApplication .wrapper .inner .textContainer
+        padding-left: 30px
+        padding-right: 0
+    #homeApplication .wrapper .inner .textContainer p
+        margin-bottom: 0
+        margin-left: 5px
+        text-indent: 30px
+    #homeApplication .wrapper .inner .textContainer .socialContainer
+        margin-left: 5px
+        margin-top: 16px
+    #homeApplication .wrapper .inner .textContainer .socialContainer h4
+        font-size: 14px
+        line-height: 18px
+        margin-right: 22px
+    #homeApplication .wrapper .inner .textContainer .socialContainer .social .item
+        width: 48px
+        height: 48px
+        svg
+            width: 18px
+    #homeApplication .wrapper .inner .textContainer .socialContainer .social .item:not(:last-child)
+        margin-right: 22px
+    #homeApplication .wrapper .inner .textContainer .socialContainer .social .item::before
+        height: 110%
+        left: -28px
+    #homeApplication .wrapper .inner form
+        transform: none
+        margin: 30px 10px 0
+        width: auto
+    #homeApplication .wrapper .inner form .formGroup:first-child
+        margin-left: 0
+        margin-bottom: 26px
+    #homeApplication .wrapper .inner form .buttonContainer
+        margin-top: 40px
+        justify-content: flex-end
+    #homeApplication .wrapper .inner::before,
+    #homeApplication .wrapper .inner::after
+        z-index: -2
+        transform: $decSkew
+    #homeApplication .wrapper .inner::after
+        top: 43px
+        bottom: 37px
+        left: -18vw
+        right: -70vw
+        height: auto
+        width: auto
+        background: rgba(36,59,59,.4)
+    #homeApplication .wrapper .inner::before
+        left: -60vw
+        right: -80vw
+        background: rgba(36,59,59,.3)
+
+    footer .homeFooter
+        width: auto
+        margin: 51px -10px 0
+    footer .homeFooter .upperSide
+        padding-bottom: 80px
+    footer .homeFooter .upperSide .item .title
+        margin-right: 0
+        min-width: 21vw
+    footer .homeFooter .upperSide .col:nth-child(2) .item
+        padding-left: 0
+    footer .homeFooter .upperSide .col:not(:last-child) .item
+        margin-bottom: 30px
+    footer .homeFooter .upperSide .item .content
+        max-width: none
+    footer .homeFooter .upperSide .item .content a, 
+    footer .homeFooter .upperSide .item .content p
+        font-size: 16px
+        line-height: 20px
+    footer .homeFooter .lowerSide
+        padding: 30px 0
