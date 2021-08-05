@@ -225,11 +225,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const doubleSlider = new Swiper('#doubleSlider', {
         speed: 600,
         spaceBetween: 20,
-        slidesPerView: 2,
+        slidesPerView: 1,
         loop: true,
         navigation: {
             nextEl: '#serviceSlider .next',
             prevEl: '#serviceSlider .prev'
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2
+            }
         }
     })
 
