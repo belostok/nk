@@ -84,8 +84,9 @@
   }
   header nav > ul {
     margin-left: 0;
-    padding: 127px 40px 112px;
-    position: relative
+    padding: 127px 40px 36px;
+    position: relative;
+    overflow: hidden
   }
   header nav > ul::before {
     content: '';
@@ -94,8 +95,8 @@
     -ms-transform: skewX(-45deg);
     transform: skewX(-45deg);
     position: absolute;
-    left: -310px;
-    right: -280px;
+    left: -225px;
+    right: -262px;
     top: 0;
     bottom: 0
   }
@@ -106,11 +107,11 @@
     display: none
   }
   header nav > ul > li a {
-    padding: 25px 0
+    padding: 15px 0
   }
   header nav > ul > li > a {
-    font-size: 24px;
-    line-height: 30px
+    font-size: 22px;
+    line-height: 28px
   }
   header nav > ul > li ul {
     display: block;
@@ -120,8 +121,8 @@
     top: auto;
     left: auto;
     right: auto;
-    margin: -4px 0 0;
-    padding: 0 0 16px 0;
+    margin: 6px 0 0;
+    padding: 0 0 6px 0;
     background: 0 0
   }
   header nav > ul > li ul li:not(:last-child) {
