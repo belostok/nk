@@ -36,7 +36,7 @@
         line-height: 30px
     header
         &.menuScroll
-            #sandwich, .phone
+            .phone
                 opacity: 0
     header .wrapper
         padding: 16px 10px 16px 0
@@ -371,6 +371,71 @@
         left: -60vw
         right: -80vw
         background: rgba(36,59,59,.3)
+    
+    .secTitle .title
+        margin-top: 80px
+        padding: 47px 0 34px
+    .secTitle .title h1
+        font-size: 24px
+        line-height: 30px
+        margin-left: 0
+
+    #services .wrapper .decs
+        display: none
+    #services
+        margin-top: 53px
+    #services .wrapper
+        padding-bottom: 30px
+        margin: 0 -10px
+        width: auto
+    #services .wrapper .inner
+        transform: none
+        margin: 0 -10px 0 10px
+        width: auto
+    #services .wrapper .inner .col:nth-child(odd)
+        margin-top: 0
+    #services .wrapper .inner .item
+        width: 100%
+        height: 36vw
+        margin-bottom: 10px
+        display: flex
+        align-items: center
+    #services .wrapper .inner .item .imgContainer .imgContainerInner img
+        transform: none
+    #services .wrapper .inner .item .textContainer
+        transform: none
+        position: relative
+        top: auto
+        bottom: auto
+        margin: 0
+        width: auto
+        height: auto
+        max-width: 294px
+    #services .wrapper .inner .col:nth-child(odd) .item .textContainer
+        right: auto
+    #services .wrapper .inner .col:nth-child(even) .item .textContainer
+        left: auto
+    #services .wrapper .inner .item .imgContainer
+        left: 11vw
+        right: 0
+        top: 0
+        bottom: 0
+        &::before, &::after
+           content: '' 
+           transform: $decSkew
+           position: absolute
+           background: $black
+           width: 37vw
+           top: 0
+           bottom: 0
+        &::before
+            left: -19vw
+        &::after
+            right: -44vw
+        
+    #services .wrapper .inner .item .imgContainer .imgContainerInner
+        left: 0
+        right: 0
 
     footer .homeFooter
         width: auto
@@ -392,3 +457,7 @@
         line-height: 20px
     footer .homeFooter .lowerSide
         padding: 30px 0
+    footer .secFooter .wrapper .textContainer
+        padding: 30px 0
+        margin: 0 -10px
+        width: auto

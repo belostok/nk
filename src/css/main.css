@@ -405,7 +405,7 @@ header nav > ul > li:first-child a svg {
   transition: transform .3s;
   transition: transform .3s,-webkit-transform .3s
 }
-header nav > ul > li.active {
+header nav > ul > li.active > a {
   text-decoration: underline
 }
 header nav > ul > li a {
