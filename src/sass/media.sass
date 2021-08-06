@@ -521,7 +521,46 @@
         opacity: 0.5
         right: -270px
         top: -17px
-        left: -15px    
+        left: -15px
+
+    #clients
+        margin: 47px 10px 0
+        padding-bottom: 60px
+        width: auto
+        border-bottom: 0.5px solid rgba(255,255,255,.3)
+    #clients::after
+        content: none
+    #clients .item
+        margin: 0 0 37px
+        padding: 20px 0
+        width: auto    
+    #clients .item::before,
+    #clients .item:nth-child(even)::before
+        opacity: 0.5
+        top: 0
+        bottom: 0
+        left: auto
+        right: -150vw
+        width: 230vw
+    #clients .item .imgContainer
+        height: 48vw
+        margin-bottom: 20px
+    #clients .item .textContainer h3
+        font-size: 20px
+        line-height: 25px
+        margin-bottom: 30px
+        text-align: center
+    #clients .item .textContainer p
+        font-size: 12px
+        line-height: 15px
+    #clients .item:nth-child(even)
+        margin-bottom: 37px
+    #clients .item:nth-child(even) .row
+        justify-content: flex-start
+    #clients .item:nth-child(even) .row .col:first-child
+        order: 1
+    #clients .item:nth-child(even) .row .col:last-child
+        order: 2
 
     footer .homeFooter
         width: auto
