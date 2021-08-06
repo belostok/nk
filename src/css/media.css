@@ -839,6 +839,28 @@
     font-size: 16px;
     line-height: 20px
   }
+  #aboutTeam .wrapper {
+    margin: 0 -10px;
+    width: auto;
+    border-bottom: .5px solid rgba(255,255,255,.3)
+  }
+  #aboutTeam .wrapper .decs {
+    display: none
+  }
+  #aboutTeam .team {
+    margin-top: 27vw;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+  }
+  #aboutTeam .team .item:nth-child(1),
+  #aboutTeam .team .item:nth-child(13),
+  #aboutTeam .team .item:nth-child(7) {
+    margin-left: 0
+  }
+  #aboutBanner {
+    display: none
+  }
   footer .homeFooter {
     width: auto;
     margin: 51px -10px 0
