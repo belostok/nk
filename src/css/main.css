@@ -312,6 +312,9 @@ header.active {
 header.noDec .wrapper .decs {
   display: none
 }
+header.decMobile .wrapper .decs {
+  display: none
+}
 header .wrapper {
   position: relative;
   display: -webkit-box;

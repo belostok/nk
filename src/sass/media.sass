@@ -38,6 +38,10 @@
         &.menuScroll
             .phone
                 opacity: 0
+        &.decMobile
+            .wrapper
+                .decs
+                    display: block
     header .wrapper
         padding: 16px 10px 16px 0
     header .wrapper .decs .dec
@@ -561,6 +565,55 @@
         order: 1
     #clients .item:nth-child(even) .row .col:last-child
         order: 2
+
+    .contactsTitle .title
+        margin-left: 0
+    #contacts::before
+        background: #1A2526
+        opacity: 1
+        top: -159px
+        bottom: -25px
+        right: 0
+        left: -39vw
+        width: auto
+    #contacts .map
+        position: relative
+        left: auto
+    #contacts
+        margin-top: 48px
+        min-height: auto
+        display: block
+    #contacts .wrapper
+        height: auto
+        display: flex
+        flex-direction: column
+        margin: 0 10px
+        padding-bottom: 40px
+        width: auto
+        border-bottom: 0.5px solid rgba(255,255,255,.3)
+        .map
+            order: 2
+            margin: 54px -10px 0
+            width: auto
+            height: 89vw
+        & > .container
+            order: 1
+    #contacts .map::before
+        width: 100px
+        height: 100px
+        left: -51px
+        background: #1A2526
+        opacity: 1
+    #contacts .textContainer
+        margin: 0 -20px
+        width: auto
+    #contacts .textContainer .item:not(:last-child)
+        margin-bottom: 30px
+    #contacts .textContainer .item .title p,
+    #contacts .textContainer .item .content a, 
+    #contacts .textContainer .item .content p
+        font-size: 16px
+        line-height: 20px
 
     footer .homeFooter
         width: auto
