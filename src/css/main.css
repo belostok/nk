@@ -1051,7 +1051,7 @@ header .phone svg {
 #homeApplication .wrapper .inner form .formGroup {
   width: 100%
 }
-#homeApplication .wrapper .inner form .formGroup:first-child {
+#homeApplication .wrapper .inner form .formGroup:first-of-type {
   margin-left: 60px;
   margin-bottom: 25px
 }
@@ -1245,6 +1245,10 @@ header .phone svg {
   background-repeat: no-repeat;
   background-size: contain;
   margin-right: 30px
+}
+#serviceSlider.notSlider .sliderContainer .navigation .next,
+#serviceSlider.notSlider .sliderContainer .navigation .prev {
+  display: none
 }
 #serviceSlider .title {
   padding: 58px 0 39px;

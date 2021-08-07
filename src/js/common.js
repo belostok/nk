@@ -74,7 +74,7 @@ const formSend = async e => {
 
     if (error === 0) {
         form.classList.add('_sending')
-        const response = await fetch('../mail.php', {
+        const response = await fetch('/assets/app/mail.php', {
             method: 'POST',
             body: formData
         })
@@ -97,8 +97,8 @@ const header = document.querySelector('header')
 const sandwich = document.getElementById('sandwich')
 const menu = document.querySelector('header nav')
 const menuUl = menu.querySelector('ul')
-sandwich.addEventListener('click', () => {
-    if(!sandwich.classList.contains('active')) {
+isMobile && sandwich.addEventListener('click', () => {
+    if (!sandwich.classList.contains('active')) {
         menu.style.display = 'block'
         setTimeout(() => classActive(sandwich, menu), 0)
     } else {
@@ -110,8 +110,8 @@ sandwich.addEventListener('click', () => {
 menu.addEventListener('scroll', e => {
     const offset = e.target.scrollTop
     offset > 50 ?
-    header.classList.add('menuScroll') :
-    header.classList.remove('menuScroll')
+        header.classList.add('menuScroll') :
+        header.classList.remove('menuScroll')
 })
 
 document.addEventListener('scroll', () => {
@@ -155,16 +155,21 @@ document.addEventListener('DOMContentLoaded', () => {
     Array.from(headerMenuItems).forEach(e => {
         const dropdown = e.querySelector('ul')
         if (dropdown && !isMobile) {
+            let proccess = false
             e.addEventListener('mouseenter', () => {
-                if (!e.classList.contains('dropdown')) {
+                if (!proccess && !e.classList.contains('dropdown')) {
                     dropdown.style.display = 'block'
                     setTimeout(() => e.classList.add('dropdown'), 0)
                 }
             })
             e.addEventListener('mouseleave', () => {
                 if (!isMobile) {
+                    proccess = true
                     e.classList.remove('dropdown')
-                    setTimeout(() => dropdown.style.display = 'none', 300)
+                    setTimeout(() => {
+                        dropdown.style.display = 'none'
+                        proccess = false
+                    }, 300)
                 }
             })
         }
@@ -175,11 +180,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const serviceListItems = e.querySelectorAll('li')
         serviceListItems.length > 3 && e.classList.add('long')
     })
-
-
-
-
-
 
     const clientsSlider = new Swiper('#clientsSlider', {
         speed: 800,
@@ -212,31 +212,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    const singleSlider = new Swiper('#singleSlider', {
-        speed: 800,
-        spaceBetween: 20,
-        slidesPerView: 1,
-        loop: true,
-        navigation: {
-            nextEl: '#serviceSlider .next',
-            prevEl: '#serviceSlider .prev'
-        }
-    })
-    const doubleSlider = new Swiper('#doubleSlider', {
-        speed: 600,
-        spaceBetween: 20,
-        slidesPerView: 1,
-        loop: true,
-        navigation: {
-            nextEl: '#serviceSlider .next',
-            prevEl: '#serviceSlider .prev'
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2
+    const serviceSlider = document.getElementById('serviceSlider')
+    const numOfSlides = document.querySelectorAll('#doubleSlider .swiper-slide').length
+    if (numOfSlides > 1) {
+        const doubleSlider = new Swiper('#doubleSlider', {
+            speed: 600,
+            spaceBetween: 20,
+            slidesPerView: 1,
+            loop: true,
+            navigation: {
+                nextEl: '#serviceSlider .next',
+                prevEl: '#serviceSlider .prev'
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2
+                }
             }
-        }
-    })
+        })
+    } else {
+        serviceSlider.classList.add('notSlider')
+    }
 
     // const callbackForm = document.getElementById('callbackForm')
     // callbackForm.addEventListener('submit', formSend)

@@ -10,7 +10,8 @@ const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const del = require('del');
 
-const distPath = 'dist/';
+// const distPath = 'dist/';
+const distPath = 'C:/OpenServer/domains/nk.loc/assets/app/';
 
 function scripts() {
 	return src([
