@@ -10,12 +10,15 @@ const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache');
 const del = require('del');
 
-// const distPath = 'dist/';
-const distPath = 'C:/OpenServer/domains/nk.loc/assets/app/';
+const distPath = 'dist/';
+// const distPath = 'C:/OpenServer/domains/nk.loc/assets/app/';
 
 function scripts() {
 	return src([
-		'./node_modules/swiper/swiper-bundle.min.js'
+		'./node_modules/swiper/swiper-bundle.min.js',
+		'./node_modules/sal.js/dist/sal.js',
+		'./node_modules/gsap/dist/gsap.min.js',
+		'./node_modules/gsap/dist/ScrollTrigger.min.js'
 	])
 		.pipe(concat('libs.min.js'))
 		.pipe(uglify())

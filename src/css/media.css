@@ -410,10 +410,11 @@
   .commonTeam .team .item .upperSide .imgContainer {
     width: 50%
   }
-  .commonTeam .team .item::before {
+  .commonTeam .team .item .itemInner::before {
     height: 66vw;
-    width: 56vw;
-    top: -10vw
+    width: 56.5vw;
+    top: -10vw;
+    left: -.7vw
   }
   #homeApplication {
     margin-top: -14px
@@ -853,10 +854,20 @@
     -ms-flex-pack: justify;
     justify-content: space-between
   }
+  #aboutTeam .team .item {
+    height: auto;
+    min-height: 53vw
+  }
   #aboutTeam .team .item:nth-child(1),
   #aboutTeam .team .item:nth-child(13),
   #aboutTeam .team .item:nth-child(7) {
     margin-left: 0
+  }
+  #aboutTeam .team .item .itemInner::before {
+    height: 66vw;
+    width: 56.5vw;
+    top: -10vw;
+    left: -.7vw
   }
   #aboutBanner {
     display: none

@@ -28,6 +28,19 @@ const autoHeight = (content, container) => {
     }
 }
 
+const getSiblings = e => {
+    let siblings = []
+    let sibling = e.parentNode.firstChild
+
+    while (sibling) {
+        if (sibling.nodeType === 1 && sibling !== e) {
+            siblings.push(sibling)
+        }
+        sibling = sibling.nextSibling
+    }
+    return siblings
+}
+
 const emailTest = i =>
     !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(i.value)
 
@@ -115,18 +128,14 @@ menu.addEventListener('scroll', e => {
 })
 
 document.addEventListener('scroll', () => {
-
     const offset = window.scrollY
     offset > 100 ?
         header.classList.add('active') :
         header.classList.remove('active')
-
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    const currentYear = document.querySelector('.currentYear')
-    if (currentYear) { currentYear.innerHTML = new Date().getFullYear() }
+    const scrollAnimations = !isMobile && sal()
 
     const textAngle = document.querySelectorAll('.textAngle')
     Array.from(textAngle).forEach(e => {
@@ -181,6 +190,86 @@ document.addEventListener('DOMContentLoaded', () => {
         serviceListItems.length > 3 && e.classList.add('long')
     })
 
+    const services = document.querySelectorAll('.serviceHover')
+    services.forEach(s => {
+        const siblings = getSiblings(s)
+        s.addEventListener('mouseenter', () => {
+            siblings.forEach(sib => sib.classList.add('sibling'))
+        })
+        s.addEventListener('mouseleave', () => {
+            services.forEach(serv => serv.classList.remove('sibling'))
+        })
+    })
+
+    const teamPage = () => {
+        const teamItems = document.querySelectorAll('.commonTeam .item')
+        const teamItem = document.querySelector('.commonTeam .item')
+        const teamItemInner = teamItem && teamItem.querySelector('.itemInner')
+        const teamItemHeight = teamItem && window.getComputedStyle(teamItem).getPropertyValue('height')
+        const teamItemLeft = teamItemInner && window.getComputedStyle(teamItemInner, ':before').getPropertyValue('left').replace('px', '')
+
+        const teamInit = active => {
+            teamItems.forEach(item => {
+                const itemInner = item.querySelector('.itemInner')
+                const teamItemLowerLong = item.querySelector('.lowerSide .long')
+                item.classList.remove('active')
+                itemInner.style.height = teamItemHeight
+                itemInner.style.setProperty('--left', null)
+                itemInner.style.setProperty('--width', null)
+                if (active) {
+                    item.style.zIndex = 0
+                } else {
+                    setTimeout(() => item.style.zIndex = 0, 300)
+                }
+                if (teamItemLowerLong) { teamItemLowerLong.style.opacity = 0 }
+            })
+        }
+
+        const teamHeight = item => {
+            const itemInner = item.querySelector('.itemInner')
+            const upperSide = item.querySelector('.upperSide')
+            const lowerSide = item.querySelector('.lowerSide')
+            const openHeight = (upperSide.offsetHeight + lowerSide.offsetHeight)
+            const heightDif = (openHeight - teamItemHeight.replace('px', '')) / 2
+            itemInner.style.height = `${openHeight}px`
+            itemInner.style.setProperty('--left', `${teamItemLeft - heightDif}px`)
+            itemInner.style.setProperty('--width', `${openHeight}px`)
+        }
+
+        Array.from(teamItems).forEach(t => {
+            t.addEventListener('click', () => {
+                const teamItemLowerLong = t.querySelector('.lowerSide .long')
+                const hasChild = teamItemLowerLong && teamItemLowerLong.childNodes.length > 1
+
+                if (!t.classList.contains('active') && hasChild) {
+                    teamInit(true)
+                    t.classList.add('active')
+                    t.style.zIndex = 1
+                    teamHeight(t)
+                    setTimeout(() => {
+                        if (teamItemLowerLong) { teamItemLowerLong.style.opacity = 1 }
+                    }, 100)
+                } else {
+                    teamInit()
+                }
+            })
+        })
+
+        window.addEventListener('click', e => {
+            const getActive = () => {
+                let trueCount = 0
+                teamItems.forEach(item => {
+                    if (item.contains(e.target)) {
+                        trueCount++
+                    }
+                })
+                return trueCount
+            }
+            getActive() < 1 && teamInit()
+        })
+    }
+    !isMobile && teamPage()
+
     const clientsSlider = new Swiper('#clientsSlider', {
         speed: 800,
         spaceBetween: 20,
@@ -231,32 +320,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
     } else {
-        serviceSlider.classList.add('notSlider')
+        serviceSlider && serviceSlider.classList.add('notSlider')
     }
 
-    // const callbackForm = document.getElementById('callbackForm')
-    // callbackForm.addEventListener('submit', formSend)
+    const homeForm = document.getElementById('homeForm')
+    homeForm && homeForm.addEventListener('submit', formSend)
 
 })
 
-document.onreadystatechange = () => {
-    if (document.readyState === 'complete') {
-
-    }
-}
-
-// if (document.getElementById('contactsPage')) {
-//     DG.then(() => {
-//         let map
-//         const mapIcon = DG.icon({
-//             iconUrl: '/assets/app/img/marker.png',
-//             iconSize: isMobile ? [23, 24] : [33, 34]
-//         })
-//         map = DG.map('map', {
-//             center: [55.753466, 37.62017],
-//             zoom: 10
-//         })
-//         DG.marker([55.749874, 37.53774], { icon: mapIcon }).addTo(map)
-//         DG.marker([55.962681, 37.509696], { icon: mapIcon }).addTo(map)
-//     })
-// }
+const titlesDec = document.querySelectorAll('.titleDec')
+titlesDec.forEach(section => {
+  gsap.from(section, 
+  {
+    scrollTrigger: {
+        trigger: section,
+        start: '10% bottom',
+    },
+    left: '-80px', 
+    opacity: 0, 
+    delay: 0.8
+  })
+})
+gsap.from('header .dec', { left: '100vw', delay: 0.6 })
+gsap.from('#homeTitle > .decs .bottomRightBlock', { right: '-45vw', delay: 0.8 })
+gsap.from('#homeTitle .title .decs .topLeftLine', { opacity: 0, delay: 1.2 })
+gsap.from('#homeTitle > .decs .bottomRightLine', { opacity: 0, delay: 1.4 })
+gsap.from('#homeServices .wrapper > .decs .leftLine', { scrollTrigger: '#homeServices', opacity: 0, delay: 1.2 })
+gsap.from('#homeServices .wrapper > .decs .rightLine', { scrollTrigger: '#homeServices', opacity: 0, delay: 1.4 })
+gsap.from('#homeTeam .wrapper .decs .line', { 
+    scrollTrigger: {
+        trigger: '#homeTeam',
+        start: '80% bottom'
+    }, 
+    opacity: 0, 
+    delay: 1.4 
+})
+gsap.from('#homeApplication .wrapper .decs .line', { 
+    scrollTrigger: {
+        trigger: '#homeApplication',
+        start: '80% bottom'
+    }, 
+    opacity: 0, 
+    delay: 1.4 
+})

@@ -832,21 +832,8 @@ header .phone svg {
 .commonTeam .team .item {
   width: 315px;
   min-height: 370px;
-  overflow: hidden;
   position: relative;
   margin-bottom: 30px
-}
-.commonTeam .team .item::before {
-  content: '';
-  position: absolute;
-  height: 450px;
-  width: 402px;
-  background: #1b2929;
-  top: -75px;
-  left: 0;
-  -webkit-transform: skewX(-45deg);
-  -ms-transform: skewX(-45deg);
-  transform: skewX(-45deg)
 }
 .commonTeam .team .item:first-child {
   margin-left: 50px
@@ -857,6 +844,27 @@ header .phone svg {
 .commonTeam .team .item:nth-child(10),
 .commonTeam .team .item:nth-child(4) {
   margin-left: 253px
+}
+.commonTeam .team .item .itemInner {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0
+}
+.commonTeam .team .item .itemInner::before {
+  content: '';
+  position: absolute;
+  height: 450px;
+  width: 402px;
+  background: #1b2929;
+  top: -75px;
+  left: 0;
+  z-index: -1;
+  -webkit-transform: skewX(-45deg);
+  -ms-transform: skewX(-45deg);
+  transform: skewX(-45deg)
 }
 .commonTeam .team .item .upperSide {
   height: 237px;
@@ -1552,6 +1560,11 @@ header .phone svg {
 #aboutTeam .team {
   margin-top: 36px
 }
+#aboutTeam .team .item {
+  cursor: pointer;
+  min-height: auto;
+  height: 370px
+}
 #aboutTeam .team .item:nth-child(10),
 #aboutTeam .team .item:nth-child(4) {
   margin-left: 0
@@ -1560,6 +1573,78 @@ header .phone svg {
 #aboutTeam .team .item:nth-child(13),
 #aboutTeam .team .item:nth-child(7) {
   margin-left: 150px
+}
+#aboutTeam .team .item .itemInner {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: height .3s,-webkit-transform .3s;
+  transition: height .3s,-webkit-transform .3s;
+  -o-transition: transform .3s,height .3s;
+  transition: transform .3s,height .3s;
+  transition: transform .3s,height .3s,-webkit-transform .3s
+}
+#aboutTeam .team .item .itemInner::before {
+  top: 0;
+  bottom: 0;
+  left: var(--left,-35px);
+  right: auto;
+  height: auto;
+  width: var(--width,128%);
+  -webkit-transition: left .3s,width .3s;
+  -o-transition: left .3s,width .3s;
+  transition: left .3s,width .3s
+}
+#aboutTeam .team .item .upperSide .titleContainer {
+  opacity: 1
+}
+#aboutTeam .team .item .lowerSide .long {
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease;
+  -o-transition: opacity .3s ease;
+  transition: opacity .3s ease
+}
+#aboutTeam .team .item .lowerSide .long p:not(:first-of-type) {
+  margin-top: 14px
+}
+#aboutTeam .team .item .lowerSide svg {
+  opacity: 0;
+  position: absolute;
+  left: 24px;
+  bottom: 35px
+}
+#aboutTeam .team .item.active .itemInner {
+  -webkit-transform: scale(1.32);
+  -ms-transform: scale(1.32);
+  transform: scale(1.32)
+}
+#aboutTeam .team .item.active .itemInner::before {
+  background: #243b3b
+}
+#aboutTeam .team .item.active .upperSide .titleContainer p {
+  font-size: 10.5px;
+  line-height: 14px
+}
+#aboutTeam .team .item.active .lowerSide {
+  padding-bottom: 76px
+}
+#aboutTeam .team .item.active .lowerSide p {
+  font-size: 10.5px;
+  line-height: 14px
+}
+#aboutTeam .team .item.active .lowerSide .short {
+  display: none
+}
+#aboutTeam .team .item.active .lowerSide .long {
+  display: block;
+  opacity: 0
+}
+#aboutTeam .team .item.active .lowerSide svg {
+  opacity: 1;
+  -webkit-transition: opacity .3s ease .1s;
+  -o-transition: opacity .3s ease .1s;
+  transition: opacity .3s ease .1s
 }
 #aboutBanner {
   margin-top: 60px
